@@ -11,4 +11,4 @@ XRRpred needs predictions of solvent accessibility (from ASAquick) and intrinsic
 sklearn, numpy
 ## usage
 to run, you just need to provide a fasta file fomatted the same way described on the XRRpred webserver (such as ``seqs.fasta``) and run the following command in the main directory:
-> ./XRRpred.py seqs.fasta
+> ``./XRRpred.py seqs.fasta``
