@@ -41,12 +41,12 @@ train_df = pandas.read_csv(training_set_path)
 #create the scaler and scale the features
 norm_train_df,scaler = normalize(train_df,features,target_col)
 #save the scaler
-dump(scaler, var+".scaler")
+dump(scaler, "models/"+var+".scaler")
 #train the right model on the scaled dataset
 train_X = norm_train_df.loc[:, features].values
 train_Y = norm_train_df.loc[:, target_col].values
 model.fit(train_X, train_Y)
-dump(model, var+".model")
+dump(model, "models/"+ var+".model")
 #save the model
 
 
@@ -54,7 +54,7 @@ dump(model, var+".model")
 
 
 var = "rfree"
-model = (alpha=0.001,l1_ratio=0.05)
+model = ElasticNet(alpha=0.001,l1_ratio=0.05)
 conf = allconf[var]
 training_set_path = conf["data_file"]
 features = conf["features"]
@@ -64,10 +64,10 @@ train_df = pandas.read_csv(training_set_path)
 #create the scaler and scale the features
 norm_train_df,scaler = normalize(train_df,features,target_col)
 #save the scaler
-dump(scaler, var+"_new.scaler")
+dump(scaler,"models/"+ var+".scaler")
 #train the right model on the scaled dataset
 train_X = norm_train_df.loc[:, features].values
 train_Y = norm_train_df.loc[:, target_col].values
 model.fit(train_X, train_Y)
-dump(model, var+"_new.model")
+dump(model, "models/"+ var+".model")
 #save the model

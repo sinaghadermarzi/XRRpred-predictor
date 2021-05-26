@@ -394,7 +394,7 @@ def predict(model,features_df,feature_set,min_val, max_val):
 
 
 this_script_directory = os.path.dirname(os.path.realpath(__file__))
-os.chdir(this_script_directory)
+
 
 in_path = sys.argv[1]
 in_path = os.path.abspath(in_path)
@@ -511,11 +511,11 @@ features_df = pandas.DataFrame(rows)
 # with open(this_script_directory+"/"+taskid+"_inputdf.txt","w") as cmdfile:
 #     cmdfile.writelines(str(features_df))
 # out_df.to_csv(in_path[:-4]+"_features.txt",index = False, sep = "\t")
-this_script_directory = os.path.abspath(os.path.dirname(os.path.realpath(__file__)))
-with open(this_script_directory +"/resolution.model","rb") as res_modelf,\
- 		open(this_script_directory +"/rfree.model","rb") as rfree_modelf,\
- 		open(this_script_directory +"/resolution.scaler","rb") as res_scalerf,\
-        open(this_script_directory +"/rfree.scaler","rb") as rfree_scalerf,\
+
+with open(this_script_directory +"/models/resolution.model","rb") as res_modelf,\
+ 		open(this_script_directory +"/models/rfree.model","rb") as rfree_modelf,\
+ 		open(this_script_directory +"/models/resolution.scaler","rb") as res_scalerf,\
+        open(this_script_directory +"/models/rfree.scaler","rb") as rfree_scalerf,\
  		open(this_script_directory +"/conf.json","rb") as conff:
     res_model = load(res_modelf)
     rfree_model = load(rfree_modelf)
@@ -527,7 +527,7 @@ with open(this_script_directory +"/resolution.model","rb") as res_modelf,\
 
 
 
-with open(this_script_directory +"/trainset_res_vals_sorted.txt") as train_resf , open(this_script_directory +"/trainset_rfree_vals_sorted.txt") as train_rfreef:
+with open(this_script_directory +"/data/trainset_res_vals_sorted.txt") as train_resf , open(this_script_directory +"/data/trainset_rfree_vals_sorted.txt") as train_rfreef:
     train_res_vals_str = train_resf.read().rstrip("\n").split("\n")
     train_res_vals = [float(x) for x in train_res_vals_str]
     train_rfree_vals_str = train_rfreef.read().rstrip("\n").split("\n")

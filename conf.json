@@ -1,6 +1,6 @@
 {	
 	"resolution":{
-		"data_file":"res_training_smote1.csv",
+		"data_file":"data/res_training_smote1.csv",
 		"target_var_col":"OUT_resolution",
 		"features":[
 			"frac_maxc_sidechainclass_aliphatic",
@@ -341,7 +341,7 @@
 
 	},
 	"rfree":{
-		"data_file":"rfree_training_smote2.csv",
+		"data_file":"data/rfree_training_smote2.csv",
 		"target_var_col":"OUT_rfree",
 		"features":[
 				"num_chains",
