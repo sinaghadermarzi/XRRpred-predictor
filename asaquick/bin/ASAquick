@@ -26,7 +26,7 @@ if [ ! -d "$dr" ]; then
 #  awk '{print $1,$2,-1}' "$dr/physpar" > "$dr/asa2minmax"
 fi
 
-genn2wind.e -aw "/home/biomine/programs/ASAquick/ASAquick/ASAq.wei//list.weights" -pr1 "$dr" -d . | awk '{print $2,$3,$4,$5}' > "$dr/rasaq.pred"
+genn2wind.e -aw "/home/sghadermarzi/asaquick/asaquick/ASAquick/ASAq.wei//list.weights" -pr1 "$dr" -d . | awk '{print $2,$3,$4,$5}' > "$dr/rasaq.pred"
 echo "Relative ASA (rasa) prediction in $dr/rasaq.pred, last colums is STDEV"
 mkminmax2asa "$dr/rasaq.pred" 3 > "$dr/asaqp.pred"
 paste "$dr/asaqp.pred" "$dr/rasaq.pred" | awk '{print $1,$2,$3,200*$7}' > "$dr/asaq.pred"
