@@ -16,7 +16,7 @@ to run, you just need to provide a fasta file (format as exmplained below) and r
 
 > ``./XRRpred.py seqs.fasta``
 
-`seqs.fasta` is the path to the fasta formatted input.
+where `seqs.fasta` is the path to the fasta formatted input.
 
 ### Input format:
 XRRPred accepts one or more proteins as input. The input protein sequences should be in the FASTA format, where for the multiple-chain proteins the chain sequences must use the same prefix in their ID (before the underscore). Example below shows the formatting for two proteins where proteinID1 has two chains (chainID1 and chainID2) and proteinID2 has one chain.
@@ -33,5 +33,5 @@ AMINOACIDSEQUENCE
 you can also look at the example file `example.fasta`
 
 ### Output
-the output (the csv resutls and the visualizations) is stored in the same directory as the input file. You can find an example output included in the repository (`example_results.tar.gz`)
-The output files will be  
+the output (the csv resutls and the visualizations) is stored in the same directory as the input file. You can find an example output in the `example` folder together with the corresponding input. 
+
