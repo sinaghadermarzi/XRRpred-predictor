@@ -14,7 +14,7 @@ requirements packages are: sklearn, pandas and seaborn
 ## Prediction
 to run, you just need to provide a fasta file (format as exmplained below) and run the following command in the root directory of the repository:
 
-> ``./XRRpred.py seqs.fasta``
+> ``python3 XRRpred.py seqs.fasta``
 
 where `seqs.fasta` is the path to the fasta formatted input.
 
