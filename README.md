@@ -1,14 +1,37 @@
 # XRRpred-predictor
 Implementation of XRRpred predictor: a predictor of X-ray structure quality from protein sequence
-
 The source code provided here allows user to run XRRpred predictor on a local machine. 
-## Dependencies
-This code is developed and tested on python 3.8.3 but it should run without problem on python 3.6 or any newer version.
 
-### 1-ASAquick and IUPred
+**Note:** It is highly recommended that instead of using this repository, you use the docker implementation provided [here](https://github.com/sinaghadermarzi/XRRpred-docker), which is much easier. 
+## Dependencies
+
+#### 1-ASAquick and IUPred
 XRRpred needs predictions of solvent accessibility (from ASAquick) and intrinsic disorder (from IUPred v1) to make predictions. Therefore these programs should be installed on the system and their path should be entered in ``residuelevel_scores.py``. 
-### 2- imported python packages
-sklearn, numpy
-## usage
-to run, you just need to provide a fasta file fomatted the same way described on the XRRpred webserver (such as ``seqs.fasta``) and run the following command in the main directory:
+#### 2- python and python packages 
+This code is developed and tested on python 3.8.3 but it should run on any version of python 3.
+requirements packages are: sklearn, pandas and seaborn
+
+## Prediction
+to run, you just need to provide a fasta file (format as exmplained below) and run the following command in the root directory of the repository:
+
 > ``./XRRpred.py seqs.fasta``
+
+`seqs.fasta` is the path to the fasta formatted input.
+
+### Input format:
+XRRPred accepts one or more proteins as input. The input protein sequences should be in the FASTA format, where for the multiple-chain proteins the chain sequences must use the same prefix in their ID (before the underscore). Example below shows the formatting for two proteins where proteinID1 has two chains (chainID1 and chainID2) and proteinID2 has one chain.
+
+```
+>proteinID1_chainID1
+AMINOACIDSEQUENCE
+>proteinID1_chainID2
+AMINOACIDSEQUENCE
+>proteinID2
+AMINOACIDSEQUENCE
+```
+
+you can also look at the example file `example.fasta`
+
+### Output
+the output (the csv resutls and the visualizations) is stored in the same directory as the input file. You can find an example output included in the repository (`example_results.tar.gz`)
+The output files will be  
